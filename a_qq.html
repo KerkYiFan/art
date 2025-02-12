@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彭庆勤 Pang Heng Khan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .bio {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .artworks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .artwork {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .description {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #888;
+            text-align: right;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img class="profile" src="qq1.jpg" alt="彭庆勤 Pang Heng Khan" onclick="openLightbox('qq1.jpg')">
+        <div class="bio">
+            <h2>彭庆勤 Pang Heng Khan</h2>
+            <div align="justify"><p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		1969年生于马来西亚，马六甲。目前为一位书画篆刻艺术工作者，以创作及教学为主，闲暇之际研究艺术理论和撰写艺术评论。1993年毕业于马来西亚艺术学院纯美术系，后曾任该学院纯美术讲师。<br><br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;多次参与国内外，大小型联展，交流展，义展，邀请展等，并获邀参与大型舞台文化挥毫演出，历届马六甲“三山九九重阳登高”（2008年至2013年）造势挥毫，2014年武舞“十年一剑”舞台表演挥毫演出，于吉隆坡表演艺术中心。2015“吉安泰祥乡音馆”策划“街头音乐祭”挥毫演出于新山陈旭年街。曾担任过一些相关艺术团体的职务，目前为马来西亚篆刻协会副会长，马来西亚现代书画联盟总会理事兼全国书画评审，马六甲联委会副主席，马来西亚草堂门理事。<br><br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2010年彭庆勤书画个展于马六甲培风美术馆，2012年彭庆勤书画个展于马六甲松杉馆，2014年“505墨祭”彭庆勤书法创作展于吉隆坡乡音馆，2014年“诗境”彭庆勤书法创作展于马六甲培风美术馆，2015年“墨兮”彭庆勤与马华现代诗对话书法创作展，于新山南方学院，马六甲培风美术馆。2022年星洲日报邀请“花踪墨迹”配合第十六届花踪文学奖，双人书法创作展，于八打灵再也表演艺术中心。于先后成立陇西画舍，研墨草堂书画篆刻艺术工作室。
+
+            </p></div>
+        </div>
+    </div> 
+
+	<h3 align="center">作家作品介绍</h3>
+	<div align="center"><audio controls src="qq00.mp3"></audio></div>
+    <br><br>
+
+    <h2 align="center">作品展示</h2>
+    <div class="artworks">
+        <div class="artwork">
+            <img src="qq2.jpg" alt="作品1" onclick="openLightbox('qq2.jpg')">
+            <p class="price">售价：不出售</p>
+        </div>
+        <div class="artwork">
+            <img src="qq3.jpg" alt="作品2" onclick="openLightbox('qq3.jpg')">
+            <p class="price">售价：不出售</p>
+        </div>
+            </div>
+    </div>
+
+    <a class="back" href="index.html">返回展览</a>
+</div>
+
+<!-- 灯箱容器 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="全屏查看">
+</div>
+
+<script>2
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

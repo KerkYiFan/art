@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>许瑞丽 Hui Swee Lay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .bio {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .artworks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .artwork {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .description {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #888;
+            text-align: right;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img class="profile" src="rl1.jpg" alt="许瑞丽 Hui Swee Lay" onclick="openLightbox('rl1.jpg')">
+        <div class="bio">
+            <h2>许瑞丽 Hui Swee Lay</h2>
+            <p>
+		• 美国南伊利诺大学工商管理学士精英大学心理辅导硕士<br>
+		• 师承郭温和老师<br>
+		• 马来西亚书法创研社文书，东艺馆书画印学会主席2023年“十人书画联谊展<br>
+		• 参与多项乡下微型小学书画教学活动<br>
+		• 筹办多场书画印营教学——2024年“二人书画展”<br>
+		• 2024年参展吴昌硕180周年纪念书画印展吉隆坡东艺馆及马六甲朵云轩<br>
+		• 2025年大红花国际茶展书画印展<br>
+            </p>
+        </div>
+    </div> 
+
+    <h2 align="center">作品展示</h2>
+    <div class="artworks">
+        <div class="artwork">
+            <img src="rl2.jpg" alt="作品1" onclick="openLightbox('rl2.jpg')">
+            <p class="description">作品1：风。</p>
+            <p class="price">售价：不出售</p>
+        </div>
+        <div class="artwork">
+            <img src="rl3.jpg" alt="作品2" onclick="openLightbox('rl3.jpg')">
+            <p class="description">作品2：鹿。</p>
+            <p class="price">售价：不出售</p>
+        </div>
+            </div>
+    </div>
+
+    <a class="back" href="index.html">返回展览</a>
+</div>
+
+<!-- 灯箱容器 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="全屏查看">
+</div>
+
+<script>2
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

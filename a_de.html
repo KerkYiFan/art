@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杜爾 DUA Yeong</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .bio {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .artworks {
+  	   display: grid;
+  	   grid-template-columns: 1fr; /* 让作品单独占一行 */
+ 	   gap: 10px;
+ 	   margin-top: 20px;
+   	   justify-items: center; /* 让内容居中 */
+	}
+
+	.artwork {
+	    background: #fff;
+  	   padding: 10px;
+	    border-radius: 5px;
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 	    text-align: center;
+	    position: relative;
+  	    max-width: 600px; /* 限制最大宽度，使其居中 */
+  	    width: 100%;
+ 	    margin: 0 auto; /* 让作品水平居中 */
+	}
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .description {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #888;
+            text-align: right;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img class="profile" src="de1.jpg" alt="书法家1" onclick="openLightbox('de1.jpg')">
+        <div class="bio">
+            <h2>杜爾 DUA Yeong</h2>
+            <p>
+                創作者簡介：<br>
+		• 2012年留學臺灣國立臺灣師範大學美術系西畫碩士、馬來西亞藝術學院美術系水墨畢業。<br>
+		• 2010年擔任東藝館執行館長，1996年在霹靂一所獨中擔任美術主任，擁有13年在校教學經驗，在2009榮獲在校『模範教師獎』。<br>
+		• 目前是一名陶塑創作者，國外舉辦9次個展、18次聯展，國外獲獎無數。
+            </p>
+        </div>
+    </div> 
+
+    <h2 align="center">作品展示</h2>
+    <div class="artworks" align="center">
+        <div class="artwork">
+            <img src="de2.jpg" alt="作品1" onclick="openLightbox('de2.jpg')">
+            <p class="description">《書法—裝置》類靜夜詩 • 月亮看著你回家<br>Installation art—The moon is Looking at you Returning Home </p>
+	    <p style="font-size:15px">
+		360cm X 200cm X 700cm <br>
+		ink on paper <br><br>
+		創作動機：<br>
+		現代書法走向當代之路途徑漫漫，書寫思潮正屬探索階段。我個人給當代書法擬出一個定義讓我有創作方向：
+		"是開放性的、多元性的、包容的，書法可以很當代，當代也可以連結傳統，這是我對當代書法的感覺。" <br><br>
+		此展裝置作品于書法、古詩、西方文學與裝置表現兼具，將視覺、空間、戲劇與哲理思考互相結合。毛筆藝術的傳承是複雜又矛盾的，我嘗試把漢字的深意，去包容多元的實踐與探討。使書法不再只是傳達訊息功能，而是一種多元時代包容的美學表達和開放性的藝術體現。</p>
+            <p class="price">售价：不出售</p>
+        </div>
+           </div>
+
+    <a class="back" href="index.html">返回展览</a>
+</div>
+
+<!-- 灯箱容器 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="全屏查看">
+</div>
+
+<script>2
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

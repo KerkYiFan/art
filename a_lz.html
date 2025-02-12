@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李丽珍 Lee Lai Chun </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: lzite;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .bio {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .artworks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .artwork {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+	.artworks1 {
+  	   display: grid;
+  	   grid-template-columns: 1fr; /* 让作品单独占一行 */
+ 	   gap: 10px;
+ 	   margin-top: 20px;
+   	   justify-items: center; /* 让内容居中 */
+	}
+
+	.artwork1 {
+	    background: #fff;
+  	   padding: 10px;
+	    border-radius: 5px;
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 	    text-align: center;
+	    position: relative;
+  	    max-width: 600px; /* 限制最大宽度，使其居中 */
+  	    width: 100%;
+ 	    margin: 0 auto; /* 让作品水平居中 */
+	}
+
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+.artwork1 img {
+    max-width: 100%; /* 确保图片不会超出容器 */
+    height: auto; /* 保持图片比例 */
+    display: block;
+    margin: 0 auto; /* 让图片居中 */
+}
+
+.artwork1 {
+    max-width: 500px; /* 限制作品区域的最大宽度 */
+    width: 100%;
+    margin: 0 auto; /* 居中显示 */
+}
+
+.artworks1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 居中所有作品 */
+    gap: 10px;
+}
+        .description {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #888;
+            text-align: right;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img class="profile" src="lz1.jpg" alt="李丽珍 Lee Lai Chun " onclick="openLightbox('lz1.jpg')">
+        <div class="bio">
+            <h2>李丽珍 Lee Lai Chun </h2>
+            <p>
+		• 为流浪狗中心义卖筹款“DOG住心”个人展于马大艺术画廊<br>
+		• 国际荟萃邀请联展(香港) <br>
+		• 中正纪念馆邀请联展(台北) <br>
+		• 敦煌莫高窟博物馆邀请联展(中国)<br><br>
+		• 我的曾祖父从广州清远下南洋跟随采锡矿工搬迁至马来西亚谋生，终成为文书员代矿工们处理事物。当我从财务经理职位下岗退休后，就开始延续了他老人家的水墨书画的文化遗传细胞。投入认真学习水墨画促渐成为我下半生退休后的生活目标。为了能传承中国书画文化给身边更多的人，我踊跃的参加各项艺术活动如个展，国家文化艺术节，慈善义卖会，义展及华教建校筹款活动。 童年接受六年正统华文教育，中学进入本地国中延续教育但依然学习中文，保持对中华文化的热忱，特别是对水墨画爱不释手，至今我在尝试不同的水墨混合媒介创作。
+                </p>
+        </div>
+    </div> 
+
+    <h2 align="center">书法作品</h2>
+    <div class="artworks">
+        <div class="artwork">
+            <img src="lz2.jpg" alt="作品1" onclick="openLightbox('lz2.jpg')">
+	    <p class="description">作品1：墨舞神飞。</p>
+            <p class="price">售价：RM1888</p>
+        </div>
+         <div class="artwork">
+            <img src="lz4.jpg" alt="作品1" onclick="openLightbox('lz4.jpg')">
+	    <p class="description">作品2：云龙并驾，天马行空</p>
+            <p class="price">售价：RM2888</p>
+        </div>
+       </div>
+
+	<br>
+	<h2 align="center">立体书法</h2>	
+       <div class="artworks1">
+        <div class="artwork1">
+            <img src="lz3.jpg" alt="作品2" onclick="openLightbox('lz3.jpg')">
+            <p class="description">作品3：云江记</p>
+	    <div align="justify"><p>释文：<br> 云江记尉山之南，有水一湾，西襟洞庭，北延震泽，浩荡 无涯，时乎风抑烟清，而水波不兴，则云影徘徊，天光上下，风景殊媚， 而适费子居焉，因自号问云江竹林，与有姻谊，乃欤门而清曰，费子 谓是号也，非文无以章其志，非名笔永其传，将谋所以识 之也，予则请之，以为尉山之水，信非鳞洲之与龙窟，鸿海 之与鹍溟，不过一碧之狂澜，故费子足取欤，请者不能复，而 予则更为之说曰，人生贵适意耳，苟可以乐吾志、舒吾情，何 求乎千里之巨浸，万顷之洪涛，矧是江也，诸峰瞰水，若芙蓉 倒插于碧漪，及其浅水拖蓝，柔杨摇绿，庆云为之掩映 霞彩为之潆洄，临流赋，操舟载酒，或筑子陵之钓台， 以乐曾点之浴沂，子以乐哉，夫云江诚是取矣，其无足 取者，子其知焉，奋雄立志，当如祖逖之过江击楫可也， 而无为铁鏁截江之谋，坦夷无惧，当如吴瑞之倾江 自若可也，而毋为临江叹恨之弱，吾故欲子之乐于此，而不 欲子之乐于彼也，然则如何而可，必洗心于江，以全夫天赋 之懿，不可溺情于江，以沦于逐流之非，竹林起而谢曰，愿遗 之以教费子，遂应之以为记。</p></div>
+            <p class="price">售价：3888</p>
+        </div>
+       </div>
+
+
+    <a class="back" href="index.html">返回展览</a>
+</div>
+
+<!-- 灯箱容器 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="全屏查看">
+</div>
+
+<script>2
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

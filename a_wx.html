@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郭伟雄 Sean Kook Way Siong</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .bio {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .artworks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .artwork {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+	.artworks1 {
+  	   display: grid;
+  	   grid-template-columns: 1fr; /* 让作品单独占一行 */
+ 	   gap: 10px;
+ 	   margin-top: 20px;
+   	   justify-items: center; /* 让内容居中 */
+	}
+
+	.artwork1 {
+	    background: #fff;
+  	   padding: 10px;
+	    border-radius: 5px;
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 	    text-align: center;
+	    position: relative;
+  	    max-width: 600px; /* 限制最大宽度，使其居中 */
+  	    width: 100%;
+ 	    margin: 0 auto; /* 让作品水平居中 */
+	}
+
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+.artwork1 img {
+    max-width: 100%; /* 确保图片不会超出容器 */
+    height: auto; /* 保持图片比例 */
+    display: block;
+    margin: 0 auto; /* 让图片居中 */
+}
+
+.artwork1 {
+    max-width: 500px; /* 限制作品区域的最大宽度 */
+    width: 100%;
+    margin: 0 auto; /* 居中显示 */
+}
+
+.artworks1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 居中所有作品 */
+    gap: 10px;
+}
+        .description {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #888;
+            text-align: right;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img class="profile" src="wx1.jpg" alt="郭伟雄 Sean Kook Way Siong" onclick="openLightbox('wx1.jpg')">
+        <div class="bio">
+            <h2>郭伟雄 《字：儒达》Sean Kook Way Siong</h2>
+            <div align="justify"><p>
+		• 简历<br>
+		- 2011 毕业于DASEIN Academy of Art- Diploma In Graphic Design<br>
+		- 马六甲婚礼摄影师<br>
+		- 马六甲书画联盟理事<br>
+
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我学书法，最初是为了培养耐心，后来发现它更是一种心灵的修行。每一次提笔，都是一次与自己的对话，让我在忙碌的生活中找到片刻的宁静。我特别喜欢书写《佛》《觉》《空》《达》这些字，它们不仅是文字，更是一种境界的象征，提醒我保持觉知、放下执念、追求通达。
+
+		<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将这些作品挂在空间里，既是对生活的点缀，也是对自我的激励。每当我看到这些字，都会感受到一种无形的力量，推动我不断反思和进步。书法不仅是技艺的锤炼，更是心性的磨砺。通过日复一日的练习，我学会了专注，也学会了如何在浮躁中保持内心的平和。
+
+		<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当然，书法的提升是一条漫长的路。我仍在努力练习，希望有一天能写出更有深度、更有灵魂的作品。无论是技法还是心境，我都愿意继续探索和突破。书法对我来说，不仅是一种艺术，更是一种生活的态度。
+
+            </p></div>
+        </div>
+    </div> 
+
+	<h2 align="center">书法作品</h2>
+     <div class="artworks">
+        <div class="artwork">
+            <img src="wx2.jpg" alt="作品2" onclick="openLightbox('wx2.jpg')">
+	    <p class="description">作品1：达</p>
+	    <p>90cm X 90 cm</p>
+            <p class="price">售价：不出售</p>
+        </div>
+        <div class="artwork">
+            <img src="wx3.jpg" alt="作品2" onclick="openLightbox('wx3.jpg')">
+	    <p class="description">作品2：空</p>
+	    <p>90cm x 90cm</p>
+            <p class="price">售价：不出售</p>
+        </div>
+        <div class="artwork">
+            <img src="wx4.jpg" alt="作品2" onclick="openLightbox('wx4.jpg')">
+	    <p class="description">作品3：觉</p>
+	    <p>90 cm x 90 cm</p>
+            <p class="price">售价：不出售</p>
+        </div>
+        <div class="artwork">
+            <img src="wx5.jpg" alt="作品2" onclick="openLightbox('wx5.jpg')">
+	    <p class="description">作品4：佛</p>
+	    <p>120 cm x 90 cm</p>
+            <p class="price">售价：不出售</p>
+        </div>
+      </div>
+
+    <a class="back" href="index.html">返回展览</a>
+</div>
+
+<!-- 灯箱容器 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="全屏查看">
+</div>
+
+<script>
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王嘉堃 Ong Chia Koon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .bio {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .artworks {
+  	   display: grid;
+  	   grid-template-columns: 1fr; /* 让作品单独占一行 */
+ 	   gap: 10px;
+ 	   margin-top: 20px;
+   	   justify-items: center; /* 让内容居中 */
+	}
+
+	.artwork {
+	    background: #fff;
+  	   padding: 10px;
+	    border-radius: 5px;
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 	    text-align: center;
+	    position: relative;
+  	    max-width: 600px; /* 限制最大宽度，使其居中 */
+  	    width: 100%;
+ 	    margin: 0 auto; /* 让作品水平居中 */
+	}
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .description {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #888;
+            text-align: right;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img class="profile" src="ck1.jpg" alt="王嘉堃 Ong Chia Koon" onclick="openLightbox('ck1.jpg')">
+        <div class="bio">
+            <h2>王嘉堃 Ong Chia Koon</h2>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	当代书法工作者，现居于马来西亚吉隆坡。 1996年毕业于马来西亚艺术学院，主修水墨画，副修书法篆刻。除了致力于书画创作，他也感兴趣于开展书法和其他艺术的创新结合，与不同领域的艺术工作者合作，开创不同的艺术展现形式，实现艺术交融。</p>
+
+	    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	书法是中国特有的一种传统艺术，它用毛笔将汉字写在白色的宣纸上，形成黑白对比之美，既有语言文字所具有的实用价值，也具有欣赏性的艺术价值。	马来西亚这个具有多元文化特色的国家，书法同时也被马来西亚华人作为一种文化与身份符号的价值被保留和传承。</p>
+
+	    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	身为马来西亚华裔的王嘉堃，其创作理念是注重保留书法的内在精神与艺术审美价值，强调书法艺术的线条与空间元素，而不盲从于传统的表现形式。他用高度的抽象形式展现艺术创新，同时，他也在传统与创新之间将书法融入在人们当下的生活中。王嘉堃的作品始终跟着时代的脚步。实现书法的现当代价值以及不断革新的个人风格是他创作的核心理念，因此，其作品极富有现当代书法的艺术活力与激情。
+            </p>
+        </div>
+    </div> 
+
+    <h2 align="center">作品展示</h2>
+    <div class="artworks">
+        <div class="artwork">
+            <img src="ck2.jpg" alt="作品2" onclick="openLightbox('ck2.jpg')">
+            <p class="description">
+		罪美<br>
+		34 x 138 cm<br><br>
+		ink on rice paper<br>
+		2022<br>
+	    </p>
+            <p class="price">售价：RM5000</p>
+        </div>
+        <div class="artwork">
+            <img src="ck3.jpg" alt="作品3" onclick="openLightbox('ck3.jpg')">
+	    <p class="description">
+		Triptrych 愛情徒然發生<br> 
+		34 x 138 cm<br>
+		ink on rice paper<br>
+		2022<br><br>
+
+		廢廢<br>
+		34 x 138 cm<br>
+		ink on rice paper<br>
+		2022<br><br>
+
+		親吻了再摸索 <br>
+		34 x 138 cm <br>
+		ink on rice paper<br>
+		2022
+	    </p>
+            <p class="price">售价：RM15000</p> 		
+        </div>
+        <div class="artwork">
+            <img src="ck4.jpg" alt="作品4" onclick="openLightbox('ck4.jpg')">
+            <p class="description">
+		春天不如预期<br>
+		136.5 x 113cm<br><br>
+		ink on paper<br>
+		2024
+	    </p>
+
+            <p class="price">售价：RM15000</p>
+        </div>
+
+        <div class="artwork">
+            <img src="ck5.jpg" alt="作品1" onclick="openLightbox('ck5.jpg')">
+	    <p class="description">
+		駐水 chapter 3<br>
+		68 x 138 cm<br><br>
+		ink on rice paper<br>
+		2023
+	    </p>
+            <p class="price">售价：RM10000</p>
+        </div>
+    </div>
+
+    <a class="back" href="index.html">返回展览</a>
+</div>
+
+<!-- 灯箱容器 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="全屏查看">
+</div>
+
+<script>2
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

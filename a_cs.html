@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魏财顺 Gooi Chye Soon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .bio {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .artworks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .artwork {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+	.artworks1 {
+  	   display: grid;
+  	   grid-template-columns: 1fr; /* 让作品单独占一行 */
+ 	   gap: 10px;
+ 	   margin-top: 20px;
+   	   justify-items: center; /* 让内容居中 */
+	}
+
+	.artwork1 {
+	    background: #fff;
+  	   padding: 10px;
+	    border-radius: 5px;
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 	    text-align: center;
+	    position: relative;
+  	    max-width: 600px; /* 限制最大宽度，使其居中 */
+  	    width: 100%;
+ 	    margin: 0 auto; /* 让作品水平居中 */
+	}
+
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+.artwork1 img {
+    max-width: 100%; /* 确保图片不会超出容器 */
+    height: auto; /* 保持图片比例 */
+    display: block;
+    margin: 0 auto; /* 让图片居中 */
+}
+
+.artwork1 {
+    max-width: 500px; /* 限制作品区域的最大宽度 */
+    width: 100%;
+    margin: 0 auto; /* 居中显示 */
+}
+
+.artworks1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 居中所有作品 */
+    gap: 10px;
+}
+        .description {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #888;
+            text-align: right;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img class="profile" src="cs1.jpg" alt="魏财顺 Gooi Chye Soon" onclick="openLightbox('cs1.jpg')">
+        <div class="bio">
+            <h2>魏财顺 Gooi Chye Soon</h2>
+            <p>
+		• 1963年出生于马来西亚槟城<br>
+		• 2011年向骆平山老师学习书法并加入槟州书艺学会<br>
+		• 2015年向沈瑞山老师学习篆刻及水墨画<br>
+		• 2016年尾始，每天以抄写心经为功课，藉此开始心经书法创作。<br>
+		• 也是“槟城城市速写”（Urban Sketchers Penang）的成员，周日常参与屋外街头写生<br><br>
+
+		个展 <br>
+		• 2020年曾在槟城潮人居举办“百鼠汇”个人春贴展<br>
+		• 2022年在槟城世界佛邮馆办“微妙“心经书法个展<br>
+		• 2024年槟城潮人居举办“千龙阵“个人春贴展<br>
+		• 2025年槟城潮人居举办“百蛇赚“个人春贴展<br><br>
+		
+		• 目前是槟州书艺学会副主席，
+            </p>
+        </div>
+    </div> 
+
+	<h2 align="center">书法作品</h2>
+     <div class="artworks">
+        <div class="artwork">
+            <img src="cs3.jpg" alt="作品2" onclick="openLightbox('cs3.jpg')">
+	    <p class="description">作品1：扁体篆书心经</p>
+	    <p>120cm X 70 cm</p>
+            <p class="price">售价：RM5000</p>
+        </div>
+        <div class="artwork">
+            <img src="cs4.jpg" alt="作品2" onclick="openLightbox('cs4.jpg')">
+	    <p class="description">作品2：色不异空 空不异色与心经</p>
+	    <p>112cm x68cm</p>
+            <p class="price">售价：RM3500</p>
+        </div>
+        <div class="artwork">
+            <img src="cs5.jpg" alt="作品2" onclick="openLightbox('cs5.jpg')">
+	    <p class="description">作品3：般若波罗蜜多心经</p>
+	    <p>135 cm x 68 cm</p>
+            <p class="price">售价：RM3500</p>
+        </div>
+        <div class="artwork">
+            <img src="cs6.jpg" alt="作品2" onclick="openLightbox('cs6.jpg')">
+	    <p class="description">作品4：般若波罗蜜多心经</p>
+	    <p>135 cm x 68 cm</p>
+            <p class="price">售价：RM3500</p>
+        </div>
+	</div>
+
+     <div class="artworks1">
+        <div class="artwork1">
+            <img src="cs2.jpg" alt="作品2" onclick="openLightbox('cs2.jpg')">
+	    <p class="description">作品5：永受嘉福与心经</p>
+	    <p>86cm x 72.5cm</p>
+            <p class="price">售价：RM5000</p>
+        </div>
+      </div>
+
+
+
+    <a class="back" href="index.html">返回展览</a>
+</div>
+
+<!-- 灯箱容器 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="全屏查看">
+</div>
+
+<script>
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

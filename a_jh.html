@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黎锦鸿 Lai Kin Hoong</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .bio {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .artworks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .artwork {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+	.artworks1 {
+  	   display: grid;
+  	   grid-template-columns: 1fr; /* 让作品单独占一行 */
+ 	   gap: 10px;
+ 	   margin-top: 20px;
+   	   justify-items: center; /* 让内容居中 */
+	}
+
+	.artwork1 {
+	    background: #fff;
+  	   padding: 10px;
+	    border-radius: 5px;
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 	    text-align: center;
+	    position: relative;
+  	    max-width: 600px; /* 限制最大宽度，使其居中 */
+  	    width: 100%;
+ 	    margin: 0 auto; /* 让作品水平居中 */
+	}
+
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+.artwork1 img {
+    max-width: 100%; /* 确保图片不会超出容器 */
+    height: auto; /* 保持图片比例 */
+    display: block;
+    margin: 0 auto; /* 让图片居中 */
+}
+
+.artwork1 {
+    max-width: 500px; /* 限制作品区域的最大宽度 */
+    width: 100%;
+    margin: 0 auto; /* 居中显示 */
+}
+
+.artworks1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 居中所有作品 */
+    gap: 10px;
+}
+        .description {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #888;
+            text-align: right;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img class="profile" src="jh1.jpg" alt="黎锦鸿 Lai Kin Hoong" onclick="openLightbox('jh1.jpg')">
+        <div class="bio">
+            <h2>黎锦鸿 Lai Kin Hoong</h2>
+            <p>
+		• 巴生人，1996年毕业于马来西亚艺术学院纯美术系，主修水墨画，副修书法与篆刻。<br><br>
+		• 创作理念：透过书法的点线面与造型呈现城市的节奏与生活的旋律。然后在创作上的探索试图将原本的象形汉字演变到符号形的楷书，透过文字的内容所赋予的无限想象，我试图重新的把楷书符号演变成象形，符号与抽象的书法作品。然后部分内容会以”粤语“作为选文的原因是因为本身是广东人，然从小就热爱听粤语流行曲与粤语电影，港漫等等。<br><br>
+		简历:<br>
+		• 1995年-马来西亚全国水墨画新人奖(入选，参展)<br>
+		• 1996年-马来西亚现代水墨画展<br>
+		• 1996年-马来西亚全国水墨画新人奖(优秀奖，参展)<br>
+		• 2003年-马中国际书画交流展。(参展)<br>
+		• 2008年-全国书画精英大展。(参展)<br>
+		• 2015年-蔡喜保书法奖(入选，参展)<br>
+		• 2018年-Pameran Seni Visua!" PANCARONA” ,Galeri<br>
+		• Shah Alam(入选，参展)2021年-PTGSA Pameran Terbuka Galeri Shah Alam(参展)<br>
+		• 2022年-艺想,马来西亚艺术学院校友会艺术与设计展(参展2023年-Pameran PTGSA, Galeri Shah Alam(入选，参展)<br>
+            </p>
+        </div>
+    </div> 
+
+	<h3 align="center">作家作品介绍</h3>
+	<div align="center"><audio controls src="jk00.mp3"></audio></div>
+    <br><br>
+
+    <h2 align="center">印章展示</h2>
+    <div class="artworks">
+        <div class="artwork">
+            <img src="jh2.jpg" alt="作品1" onclick="openLightbox('jh2.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh3.jpg" alt="作品1" onclick="openLightbox('jh3.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh4.jpg" alt="作品1" onclick="openLightbox('jh4.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh5.jpg" alt="作品1" onclick="openLightbox('jh5.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh6.jpg" alt="作品1" onclick="openLightbox('jh6.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh7.jpg" alt="作品1" onclick="openLightbox('jh7.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh8.jpg" alt="作品1" onclick="openLightbox('jh8.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh9.jpg" alt="作品1" onclick="openLightbox('jh9.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh10.jpg" alt="作品1" onclick="openLightbox('jh10.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh11.jpg" alt="作品1" onclick="openLightbox('jh11.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh12.jpg" alt="作品1" onclick="openLightbox('jh12.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh13.jpg" alt="作品1" onclick="openLightbox('jh13.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh14.jpg" alt="作品1" onclick="openLightbox('jh14.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh15.jpg" alt="作品1" onclick="openLightbox('jh15.jpg')">
+        </div>
+         <div class="artwork">
+            <img src="jh16.jpg" alt="作品1" onclick="openLightbox('jh16.jpg')">
+        </div>
+	 <div class="artwork">
+            <img src="jh17.jpg" alt="作品1" onclick="openLightbox('jh17.jpg')">
+        </div>
+    </div>
+
+
+	<br>
+	<h2 align="center">书法作品</h2>
+      <div class="artworks1">
+        <div class="artwork1">
+            <img src="jh18.jpg" alt="作品2" onclick="openLightbox('jh18.jpg')">
+        </div>
+      </div>
+
+     <div class="artworks">
+        <div class="artwork">
+            <img src="jh19.jpg" alt="作品2" onclick="openLightbox('jh19.jpg')">
+        </div>
+        <div class="artwork">
+            <img src="jh20.jpg" alt="作品2" onclick="openLightbox('jh20.jpg')">
+        </div>
+        <div class="artwork">
+            <img src="jh21.jpg" alt="作品2" onclick="openLightbox('jh21.jpg')">
+        </div>
+        <div class="artwork">
+            <img src="jh22.jpg" alt="作品2" onclick="openLightbox('jh22.jpg')">
+	    <p> <a href="https://www.youtube.com/watch?v=PE9IUuRrTFU"> 点击观看 </a>
+        </div>
+        <div class="artwork">
+            <img src="jh23.jpg" alt="作品2" onclick="openLightbox('jh23.jpg')">
+	    <p> <a href="https://www.youtube.com/watch?v=N2YTnMK-FNw"> 点击观看 </a>
+        </div>
+        <div class="artwork">
+            <img src="jh24.jpg" alt="作品2" onclick="openLightbox('jh24.jpg')">
+	    <p> <a href="https://www.youtube.com/watch?v=3rKLSdd1glk"> 点击观看 </a>
+        </div>
+       </div>
+
+
+    <a class="back" href="index.html">返回展览</a>
+</div>
+
+<!-- 灯箱容器 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="全屏查看">
+</div>
+
+<script>
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

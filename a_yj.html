@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑英杰 Tee Ying Jie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: yjite;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .bio {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .artworks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .artwork {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+	.artworks1 {
+  	   display: grid;
+  	   grid-template-columns: 1fr; /* 让作品单独占一行 */
+ 	   gap: 10px;
+ 	   margin-top: 20px;
+   	   justify-items: center; /* 让内容居中 */
+	}
+
+	.artwork1 {
+	    background: #fff;
+  	   padding: 10px;
+	    border-radius: 5px;
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 	    text-align: center;
+	    position: relative;
+  	    max-width: 600px; /* 限制最大宽度，使其居中 */
+  	    width: 100%;
+ 	    margin: 0 auto; /* 让作品水平居中 */
+	}
+
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+.artwork1 img {
+    max-width: 100%; /* 确保图片不会超出容器 */
+    height: auto; /* 保持图片比例 */
+    display: block;
+    margin: 0 auto; /* 让图片居中 */
+}
+
+.artwork1 {
+    max-width: 500px; /* 限制作品区域的最大宽度 */
+    width: 100%;
+    margin: 0 auto; /* 居中显示 */
+}
+
+.artworks1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 居中所有作品 */
+    gap: 10px;
+}
+        .description {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #888;
+            text-align: right;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img class="profile" src="yj1.jpg" alt="郑英杰 Tee Ying Jie" onclick="openLightbox('yj1.jpg')">
+        <div class="bio">
+            <h2>郑英杰 Tee Ying Jie </h2>
+            <p>
+                - 1989年生于⻢来西亚雪兰莪州吧⽣ <br>
+		• 书法启蒙导师赖全合师与郭温和恩师 <br>
+		• 毕业于诺丁汉特伦特⼤大学Nottingham Trent University， NTU⼴广告系 <br>
+		• 任职梳邦再也英迪国际学院(Inti International College Subang) 创意多媒体系主任 <br>
+		• 墨典文化中心主任兼书画导师 <br>
+		• 全国书法⽐比赛评审员 <br><br>
+		 曾获:<br>
+		• 2015年蔡喜保马来⻄西亚全国十杰书法⼤大赛十杰之⼀ <br>
+		• 2015年马来⻄西亚全国沈沈慕羽杯书法精英赛教师组一等奖 <br>
+		• 2013年马来⻄西亚全国沈沈慕羽杯书法精英赛公开组二等奖 <br>
+		• 2011年马来⻄西亚全国沈沈慕羽杯书法精英赛公开组三等奖 <br>
+		• 2018年马来⻄西亚颜真卿杯全国书法赛特优奖 <br>
+		• 2019年马来⻄西亚全国沈沈慕⽻杯书法精英赛教师组二等奖等。<br> 
+		<br>
+		创作理理念: 热衷于探索‘点、线、⾯面ʼ的⽆限可能，穿梭于简繁字体与手写、打印交织的世界，同时也在中英文交汇运⽤用中找到表达的张力。这种独特的文化交融为我的创作注入了源源不不断的灵感与活⼒力。
+            </p>
+        </div>
+    </div> 
+
+    <h2 align="center">书法作品</h2>
+    <div class="artworks">
+        <div class="artwork">
+            <img src="yj5.jpg" alt="作品1" onclick="openLightbox('yj5.jpg')">
+	    <p class="description">作品2：爱 I</p>
+	    <p>以汉字与爪夷文为核心，<br>诠释马来西亚文化的交融与共存。</p>
+            <p class="price">售价：RM800</p>
+        </div>
+         <div class="artwork">
+            <img src="yj6.jpg" alt="作品1" onclick="openLightbox('yj6.jpg')">
+	    <p class="description">作品2：爱 II</p>
+	    <p>汉字与爪夷文并行，<br>象征着马来西亚多元文化的和睦共生。</p>
+            <p class="price">售价：RM800</p>
+        </div>
+        <div class="artwork">
+            <img src="yj2.jpg" alt="作品1" onclick="openLightbox('yj2.jpg')">
+	    <p class="description">作品3：十二生肖。</p>
+	    <p>汉字？字母？两者巧妙交融。‘牛’字之中，藏着‘COW’的影子。其他字亦是如此，等你来发现。</p>
+            <p class="price">售价：RM800</p>
+        </div>
+         <div class="artwork">
+            <img src="yj3.jpg" alt="作品1" onclick="openLightbox('yj3.jpg')">
+	    <p class="description">作品4：我的登鹳雀楼。</p>
+	    <p>书法流动而不定，贴纸静止而稳定。两者不断交替，就如同我所身处的这个时代。</p>
+            <p class="price">售价：RM800</p>
+        </div>
+       </div>
+
+
+	<br>
+	<h2 align="center">立体书法</h2>
+       <div class="artworks1">
+        <div class="artwork1">
+            <img src="yj4.jpg" alt="作品2" onclick="openLightbox('yj4.jpg')">
+            <p class="description">作品4：点线面</p>
+	    <p>书法不应局限于书房。当音乐响起，在大众的氛围之中，<br >即兴与不确定性的融合，成为一种可贵的实验。</p>
+            <p class="price">售价：不出售</p>
+        </div>
+       </div>
+
+
+    <a class="back" href="index.html">返回展览</a>
+</div>
+
+<!-- 灯箱容器 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="全屏查看">
+</div>
+
+<script>2
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

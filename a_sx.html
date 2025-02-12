@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>張斯翔 Dr. TEO, Shi-Siang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .bio {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .artworks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .artwork {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer; /* 让鼠标变成手型，提示可点击 */
+        }
+
+        .description {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #888;
+            text-align: right;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img class="profile" src="sx1.jpg" alt="張斯翔 Dr. TEO, Shi-Siang" onclick="openLightbox('sx1.jpg')">
+        <div class="bio">
+            <h2>張斯翔（1984——）Dr. TEO, Shi-Siang</h2>
+            <p>
+		· 1984年 - 生於馬來西亞柔佛州新山市，2008年迄今寄寓臺北市<br>
+		· 國立臺灣大學中國文學系博士<br>
+		· 書法師從馬來西亞黃逢榮（果葳）及臺灣杜成植（懋哉）兩位先生 <br>
+		· 篆刻師從臺灣黃明修（小庵）及柯詩安（散行）兩位先生<br>
+		· 曾獲2018年馬來西亞書法十傑獎 <br>
+		· 現為國立臺灣大學中國文學系兼任助理教授，馬來西亞書法研究中心研究組研究員、馬來西亞篆刻協會理事<br>
+		· 曾於臺北市舉辦四次書法篆刻個人展覽，分別題為「飄流兩地書」、「抽象的抒情」、「喧囂的對話」、「三生石上朝復暮」<br>
+
+            </p>
+        </div>
+    </div> 
+
+    <h2 align="center">作品展示</h2>
+    <div class="artworks">
+        <div class="artwork">
+            <img src="sx2.jpg" alt="作品1" onclick="openLightbox('sx2.jpg')">
+        </div>
+        <div class="artwork">
+            <img src="sx3.jpg" alt="作品2" onclick="openLightbox('sx3.jpg')">
+        </div>
+            </div>
+
+<div align="justify"><p>
+<u>系列概念</u><br>
+本系列以阮籍的《詠懷十七首》為題創作。正確的展示方式應不貼牆，並從作品背後打光。依靠宣紙裝裱後仍可透光的特性，使墨色的深淺變化得以展現。作品於撰寫時，通過作者對詩作的重新詮釋，搭配繪畫中近深遠淺的墨色邏輯，將詩中重要的詞彙以弄墨拉到觀眾面前，將相對次要的內容以淡墨推向原初，從閱讀形式中產生書法與詩作內容相互詮釋的空間。而落款使用的都是以作者名字中「翔」字設計的花押，從書法中「羽」可置換為「飛」，且左右結構可轉為上下結構的概念，使「翔」的花押成為一直立的字形。以此花押作為作者的化身，在畫面上形成「我」的主體，與阮籍的詩作進行對話。其中尚有一個小彩蛋，即有一枚花押印章藏在作品中最能代表作者心境的字裡，歡迎觀者來仔細找找看。</p></div>
+<br>
+<div align="center"><p>
+<b>詠懷_7號</b><br>
+開秋兆涼氣，蟋蟀鳴床帷。<br>
+感物懷殷憂，悄悄令心悲。<br>
+多言焉所告，繁辭將訴誰？<br>
+微風吹羅袂，明月耀清暉。<br>
+晨雞鳴高樹，命駕起旋歸。<br><br>
+以水墨及宣紙的特性，將詩作中的波光粼粼展現於紙上。右上方的印章內容為「孤月照寒泉」，以此印為月，左下角花押為「我」，各站一邊面對中間水天一色的漸進，以畫面具象化了詩文內容。
+</p></div>
+
+<div align="center"><p>
+<b>詠懷_10號</b><br>
+步出上東門，北望首陽岑。<br>
+下有採薇士，上有嘉樹林。<br>
+良辰在何許？凝霜霑衣襟。<br>
+寒風振山岡，玄雲起重陰。<br>
+鳴鴈飛南征，鶗鴃發哀音。<br>
+素質遊商聲，悽愴傷我心。<br>
+</p></div>
+
+<div align="center"><p>
+以深淺不一的墨色表達詩中思緒紛呈的意識流動，最後導向畫面中的「人生實難，大道多歧」印章。這兩句話前者由陶淵明發揚光大，後者出自《列子》，而綴成一語為臺靜農先生手筆。自一千七百年前的阮籍，到百年前面對中國自古未有之大變局的臺先生，最後到了畫面最底下，身處二十一世紀的作者，人類面對命運的多變無常，乃至於生命中無可如何的變動及無奈，千百年來的思緒傳承，是作者用書法串連起來的一條對話通道。
+</div></p>
+    </div>
+
+    <a class="back" href="index.html">返回展览</a>
+</div>
+
+<!-- 灯箱容器 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="全屏查看">
+</div>
+
+<script>2
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
